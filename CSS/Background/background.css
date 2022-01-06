@@ -1,0 +1,16 @@
+body{
+    background-color: beige;
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 300px; 
+    background-attachment: scroll; 
+    /* (Background Shorthand) background: beige url("img_tree.png") no-repeat fixed right top  */  
+}
+h1{
+    background-color: burlywood;
+    /* opacity: 0.5; */
+}
+p{
+    background-color: rgb(159, 185, 202);
+}
