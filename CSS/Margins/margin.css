@@ -1,0 +1,10 @@
+div{
+    border: 2px solid black;
+    margin: 75px 50px 75px 25px;
+    background-color: cadetblue;
+    width: 800px;
+}
+
+p.inh {
+    margin: inherit;
+}
