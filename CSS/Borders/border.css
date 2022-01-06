@@ -1,0 +1,15 @@
+h1.solid{
+    border-style: solid;
+}
+
+p.mix{
+    border-style: dotted dashed groove double;
+}
+
+h2{
+    border-style: solid;
+    border-width: 10px 5px;
+    border-color: green;
+    border-radius: 5px;
+    /* (Border Shorthand) border: 5px solid green; */
+}
