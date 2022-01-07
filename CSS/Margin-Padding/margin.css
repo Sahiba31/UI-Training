@@ -1,0 +1,19 @@
+div{
+    border: 2px solid black;
+    margin: 75px 50px 75px 25px;
+    background-color: cadetblue;
+    width: 800px;
+}
+
+p.inh {
+    margin: inherit;
+}
+
+p.padd {
+    border: 1px solid black;
+    background-color: cadetblue;
+    max-width: 800px;
+    height: 200px;
+    padding: 50px;
+    /* box-sizing: border-box; */
+}
