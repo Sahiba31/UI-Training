@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+img {
+    float: left;
+    height: 250px;
+    width: 200px;
+    margin: 15px;
+}
+
+div {
+    float: left;
+    padding: 15px;
+    /* margin-top: 200px; */
+} 
+
+.box {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+}
+
+.one {
+    clear:left;
+    background-color: blueviolet;  
+}
+
+.two {
+    background-color: brown;
+}
+
+.three {
+    background-color: crimson;
+}
+
+.clearfix {
+    clear: both;
+    overflow: auto;
+    border: 3px solid #4CAF50;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+ul {
+    clear: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: red;
+  }
