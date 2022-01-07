@@ -1,0 +1,48 @@
+h1 {
+    text-align: left;
+    /* color: indianred; */
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-shadow: 2px 2px red;
+    font-family: "Audiowide", sans-serif;
+}
+
+div {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    text-align: justify;
+    padding: 10px;
+    margin: 5px;
+}
+
+span.vert {
+    vertical-align: sub;
+    color:lightcoral;
+    background-color: lightpink;
+}
+
+p.space {
+    text-indent: 30px;
+    line-height: 1.5;
+    word-spacing: 5px;
+    /* white-space: nowrap; */
+}
+
+h2 {
+    letter-spacing: 2px;
+    text-decoration: underline;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0px 0px 25px blue, 0px 0px 5px darkblue;
+}
+
+h3 {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+p.small {
+    font-variant: small-caps;
+}
