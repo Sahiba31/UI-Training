@@ -1,0 +1,36 @@
+#r1 {
+    background: lightpink;
+    width: 200px;
+    height: 150px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#r2 {
+    border: 5px solid rosybrown;
+    border-radius: 20px 15px 30px 5px;
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+}
+
+#image {
+    border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+
+#image1 {
+    border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 stretch;
+}
+
+div {
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    background-color: turquoise;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px  seagreen;
+}
