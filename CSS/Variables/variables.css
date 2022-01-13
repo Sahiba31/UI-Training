@@ -1,0 +1,33 @@
+:root {                       /*Global Variables*/
+    --blue: lightblue;
+    --white: #faf0e6;
+}
+
+body {
+    background-color: var(--blue);
+}
+
+.container {
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 15px;;
+}
+
+h2 {
+    border-bottom: 2px solid var(--blue);
+}
+
+.container button {
+    --blue: #0000ff;
+    /* --button-blue: #0000ff; New Local Variable */
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 5px;
+}
+
+@media screen and (min-width:800px) {
+    :root {
+    --blue: #6495ed;
+    }
+}
