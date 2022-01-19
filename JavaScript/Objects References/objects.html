@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Object Reference</h1>
+    <p id="demo"></p>
+
+    <script>
+        const obj = { counter: 0 };
+
+        Object.defineProperty(obj, "reset", {
+            get: function () { this.counter = 0; }
+        })
+
+        Object.defineProperty(obj, "add", {
+            set: function (val) { this.counter += val; }
+        })
+
+        Object.defineProperty(obj, "subtract", {
+            set: function (val) { this.counter -= val; }
+        })
+
+        Object.defineProperty(obj, "increment", {
+            set: function () { this.counter++; }
+        })
+
+        Object.defineProperty(obj, "decrement", {
+            set: function () { this.counter--; }
+        })
+
+        obj.reset;
+        obj.add = 5;
+        obj.subtract = 1;
+        obj.increment;
+        obj.decrement;
+        document.getElementById("demo").innerHTML = obj.counter;
+    </script>
+</body>
+
+</html>

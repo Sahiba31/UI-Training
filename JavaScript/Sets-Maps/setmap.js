@@ -24,6 +24,14 @@ function map() {
         res += key + " = " + value + "<br>";
     })
 
+    // for (const x of fruits.values()) {    //fruits.keys()
+    //     res += x + "<br>";
+    // }
+
+    // for (const x of fruits.entries()) {
+    //     res += x + "<br>";
+    // }
+
     document.getElementById("demo1").innerHTML = fruits.size + "<br>" +
         fruits.get("kiwi") + "<br>" +
         "Is Apple Present ? " + fruits.has("apple") + "<br>" +
