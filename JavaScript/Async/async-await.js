@@ -20,3 +20,4 @@ async function myDisplay() {
     document.getElementById("demo1").innerHTML = await mypromise;
 }
 myDisplay();
+
