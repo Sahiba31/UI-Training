@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        /* input.ng-empty {
+            background-color: aqua;
+        } */
+
+        input.ng-invalid {
+            background-color: lightblue;
+        }
+
+        input.ng-not-empty {
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> AngularJS Model - ng-model</h1>
+    <div ng-app="">
+        <form name="myForm" ng-init="myText='sahiba@gmail.com'">
+            <!-- Email: <input type="email" name="myAddress" ng-model="text"> -->
+            Email: <input type="email" name="myAddress" ng-model="myText" required>
+            <span ng-show="myForm.myAddress.$error.email"> Not a Valid Email Address</span>
+            <h2>Status</h2>
+            <p>Valid: {{myForm.myAddress.$valid}}</p>
+            <p>Dirty: {{myForm.myAddress.$dirty}}</p>
+            <p>Touched: {{myForm.myAddress.$touched}}</p>
+        </form>
+    </div>
+</body>
+
+</html>
