@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../0Scripts/angular.js"></script>
+    <script src="scope.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <h1>AngularJS Scopes</h1>
+    <p>Root Scope color is: </p>
+    <h2>{{color}}</h2>
+
+    <div ng-controller="myCtrl">
+        <p>Current scope color: </p>
+        <h2>{{color}}</h2>
+    </div>
+    <div ng-controller="mySubCtrl">
+        <p>Current scope color: </p>
+        <h2>{{color}}</h2>
+    </div>
+    <p>Root Scope color is still: </p>
+    <h2>{{color}}</h2>
+</body>
+
+</html>
