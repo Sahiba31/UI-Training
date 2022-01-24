@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <h1>AngularJS Directives</h1>
+    <div ng-app="myModule" ng-init="directives = [{rate:'one',name:'ng-app'}, {rate:'two',name:'ng-init'},
+         {rate:'three',name:'ng-model'}, {rate:'four',name:'ng-bind'}, {rate:'five',name:'ng-repeat'}]; 
+         name = 'Sahiba'">
+        <p>Enter your Name: <input type="text" ng-model="name"></p>
+        <p>Hello <span ng-bind="name"></span>!</p>
+        <p>List of Directives: </p>
+        <ol>
+            <li ng-repeat="x in directives">
+                {{x.name}}
+            </li>
+        </ol>
+        <my-test-directive></my-test-directive>
+        <!--Using Element Name-->
+        <!-- <div my-test-directive></div>             Using Attribute
+        <div class="my-test-directive"></div>        Using Class-->
+        <!-- directive: my-test-directive       Using Comment -->
+    </div>
+    <script>
+        var myapp = angular.module("myModule", []);
+        myapp.directive("myTestDirective", function () {
+            return {
+                // restrict: "C",
+                // restrict: "M",
+                // replace: true,
+                template: "<h2> I am not a Built-in AngularJS Directive </h2>"
+            };
+        });
+    </script>
+</body>
+
+</html>

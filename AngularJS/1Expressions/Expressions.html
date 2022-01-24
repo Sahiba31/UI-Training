@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <h1>AngularJS Expressions</h1>
+    <div ng-app="" ng-init="myCol='lightblue';
+        qty=1; cost=5; firstName='Sahiba'; lastName='Goyal'; 
+        person={firstName:'Sahiba', lastName:'Goyal'};
+        points = [1, 2, 3, 4, 5]">
+        <p>My first expression: {{5 + 5}}</p>
+        <!-- <input style="background-color:{{myCol}}" ng-model="myCol"> -->
+        <p>Total Cost is: {{qty * cost}}</p>
+        <p>Total cost is: <span ng-bind="qty * cost"></span></p>
+        <p>My Name is {{firstName + " " + lastName}}</p>
+        <p>My firstname is {{person.firstName}}</p>
+        <p>The third result is: {{points[2]}}</p>
+    </div>
+</body>
+
+</html>
