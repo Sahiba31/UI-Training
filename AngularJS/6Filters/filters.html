@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../0Scripts/angular.js"></script>
+    <script src="filters.js"></script>
+    <link href="filters.css" rel="stylesheet">
+</head>
+
+<body ng-app="myApp">
+    <h1>AngularJS Filters</h1>
+    <div ng-controller="myCtrl">
+        <h3>Filters used: uppercase, lowercase, date, number, currency, limitTo, orderBy</h3>
+        Rows to display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit"> <br><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Salary (number)</th>
+                <th>Salary (currency)</th>
+            </tr>
+            <!-- Applying filters to directives -->
+            <tr ng-repeat="employee in employees | limitTo:rowLimit | orderBy:'salary'">
+
+                <!-- Applying filters to expressions -->
+                <td>{{ employee.name | uppercase }}</td>
+                <td>{{ employee.dateOfBirth | date:"dd/MM/yyyy" }}</td>
+                <td>{{ employee.gender | lowercase }}</td>
+                <td>{{ employee.salary | number:2 }}</td>
+                <td>{{ employee.salary | currency:"$":1}}</td>
+            </tr>
+        </table>
+        <br>
+        <div>
+            <h3>Filters used: filter</h3>
+            <p>Enter some input: <input type="text" ng-model="test"></p>
+            <ul>
+                <li ng-repeat="x in names | filter:test">
+                    <!--filter:'i'-->
+                    {{x}}
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div>
+            <h3>Filters used: Custom filter</h3>
+            <ul>
+                <li ng-repeat="x in names">
+                    {{x | myFormat}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
