@@ -34,4 +34,27 @@ app.controller("myCtrl", function ($scope) {
         'Mary',
         'Kai'
     ];
+    $scope.sortColumn = "name";
+    $scope.reverseSort = false;
+    $scope.sortData = function (column) {
+        $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+        $scope.sortColumn = column;
+    }
+
+    $scope.getSortClass = function (column) {
+        if ($scope.sortColumn == column) {
+            return $scope.reverseSort ? 'arrow-down' : 'arrow-up'
+        }
+        return '';
+    }
+
+    $scope.search = function (item) {
+        if ($scope.searchText1 == undefined)
+            return true;
+        else {
+            if (item.name.toLowerCase().indexOf($scope.searchText1.toLowerCase()) != -1 || item.gender.toLowerCase().indexOf($scope.searchText1.toLowerCase()) != -1)
+                return true;
+        }
+        return false;
+    }
 });

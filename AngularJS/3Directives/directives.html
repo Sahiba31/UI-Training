@@ -5,11 +5,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
-<body>
+<body ng-app="myModule">
     <h1>AngularJS Directives</h1>
-    <div ng-app="myModule" ng-init="directives = [{rate:'one',name:'ng-app'}, {rate:'two',name:'ng-init'},
-         {rate:'three',name:'ng-model'}, {rate:'four',name:'ng-bind'}, {rate:'five',name:'ng-repeat'}]; 
-         name = 'Sahiba'">
+    <div ng-init="directives = [{rate:'one',name:'ng-app'}, {rate:'two',name:'ng-init'},
+        {rate:'three',name:'ng-model'}, {rate:'four',name:'ng-bind'}, {rate:'five',name:'ng-repeat'},
+        {rate:'six',name:'ng-src'}]; name = 'Sahiba'">
         <p>Enter your Name: <input type="text" ng-model="name"></p>
         <p>Hello <span ng-bind="name"></span>!</p>
         <p>List of Directives: </p>
@@ -24,6 +24,19 @@
         <div class="my-test-directive"></div>        Using Class-->
         <!-- directive: my-test-directive       Using Comment -->
     </div>
+
+    <div ng-controller="myController">
+        <div>
+            Name: {{country.name}}
+        </div>
+        <div>
+            Capital: {{country.capital}}
+        </div>
+        <div>
+            <img ng-src="{{country.flag}}" alt="{{country.name + ' Flag'}}" style="height: 100px; width: 200px;">
+        </div>
+    </div>
+
     <script>
         var myapp = angular.module("myModule", []);
         myapp.directive("myTestDirective", function () {
@@ -34,6 +47,15 @@
                 template: "<h2> I am not a Built-in AngularJS Directive </h2>"
             };
         });
+        myapp.controller("myController", function ($scope) {
+            var country = {
+                name: "India",
+                capital: "Delhi",
+                flag: "Images/flag.png",
+            };
+
+            $scope.country = country;
+        })
     </script>
 </body>
 
