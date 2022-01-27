@@ -1,5 +1,21 @@
 var app = angular.module("myApp", []);
-app.controller("myCtrl", function ($scope, $location, $timeout, $interval) {
+app.service("stringService", function () {               //Can use app.factory also
+    return {
+        processString: function (input) {
+            if (!input)
+                return input;
+
+            var output = "";
+            for (var i = 0; i < input.length; i++) {
+                if (i > 0 && input[i] == input[i].toUpperCase())
+                    output += " ";
+                output += input[i];
+            }
+            return output;
+        }
+    };
+});
+app.controller("myCtrl", function ($scope, $location, $timeout, $interval, stringService) {
     $scope.URL = $location.absUrl();
     $scope.myHeader = "Hello World";
     $scope.theTime = new Date().toLocaleTimeString();
@@ -13,15 +29,6 @@ app.controller("myCtrl", function ($scope, $location, $timeout, $interval) {
     }, 1000);
 
     $scope.transformString = function (input) {
-        if (!input)
-            return input;
-
-        var output = "";
-        for (var i = 0; i < input.length; i++) {
-            if (i > 0 && input[i] == input[i].toUpperCase())
-                output += " ";
-            output += input[i];
-        }
-        $scope.output = output;
+        $scope.output = stringService.processString(input);
     };
 });
