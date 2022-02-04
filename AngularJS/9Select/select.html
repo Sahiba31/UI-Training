@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../0Scripts/angular.js"></script>
+    <script src="select.js"></script>
+</head>
+
+<body>
+    <h1>AngularJS Select</h1>
+    <p>You can create dropdown lists using ng-options directive as well as ng-repeat directive.</p>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div>
+            <h2>Using ng-options directive</h2>
+            <p>Select a name: </p>
+            <select ng-model="selectedName" ng-options="x for x in names">
+            </select>
+            <h3>You selected: {{selectedName}}</h3>
+
+            <h2>Using ng-repeat directive</h2>
+            <p>Select a name:</p>
+            <select ng-model="selectedName1">
+                <option ng-repeat="x in names">
+                    {{x}}
+                </option>
+            </select>
+            <h3>You selected: {{selectedName1}}</h3>
+        </div>
+
+        <div>
+            <h2>Using ng-options directive</h2>
+            <p>Select a Car: </p>
+            <select ng-model="selectedCar" ng-options="x.model for x in cars">
+            </select>
+            <h3>You selected: {{selectedCar.color}} {{selectedCar.model}}</h3>
+
+            <h2>Using ng-repeat directive</h2>
+            <p>Select a Car: </p>
+            <select ng-model="selectedCar1">
+                <option ng-repeat="x in cars" ng-value="{{x}}">
+                    {{x.model}}
+                </option>
+            </select>
+            <h3>You selected: {{selectedCar1.color}} {{selectedCar1.model}}</h3>
+        </div>
+
+        <div>
+            <h2>The Data Source as an Object</h2>
+            <select ng-model="selectedCarObject" ng-options="x for (x, y) in carsObject">
+            </select>
+            <h3>You selected: {{selectedCarObject.brand}} {{selectedCarObject.model}} {{selectedCarObject.color}}</h3>
+        </div>
+    </div>
+</body>
+
+</html>
