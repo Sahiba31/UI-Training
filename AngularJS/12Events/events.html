@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../0Scripts/angular.js"></script>
+    <script src="events.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AngularJS Event</h1>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="language in languages">
+                    <td>{{language.name}}</td>
+                    <td>{{language.likes}}</td>
+                    <td>{{language.dislikes}}</td>
+                    <td><input type="button" value="Like" ng-click="incrementLikes(language)">
+                        <input type="button" value="Dislike" ng-click="incrementDislikes(language)">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 ng-mousemove="count = count + 1"> Click for me to see ng-mousemove</h2>
+        <h3>Count: {{count}}</h3>
+
+        <h2 ng-mousemove="myFunc($event)"> Click for me to see ng-mousemove event</h2>
+        <h3>Coordinates: {{x + ', ' + y}}</h3>
+    </div>
+</body>
+
+</html>
