@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../0Scripts/angular.js"></script>
+    <script src="form.js"></script>
+    <style>
+        input.ng-invalid {
+            background-color: aquamarine;
+        }
+
+        input.ng-valid {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <h1>AngularJS Forms</h1>
+    <div ng-controller="myCtrl">
+        <form name="studentForm" novalidate>
+            First Name: <input name="myInput" type="text" ng-model="user.firstName" required><br><br>
+
+            Last Name: <input type="text" ng-model="user.lastName"><br><br>
+
+            Do you love tea: <input type="checkbox" ng-model="check">
+            <p ng-show="check">I love Tea</p>
+
+            Favourite Food:
+            <input type="radio" ng-model="food" value="pizza"> Pizza
+            <input type="radio" ng-model="food" value="burger">Burger
+            <input type="radio" ng-model="food" value="biryani">Biryani
+            <div ng-switch="food">
+                <div ng-switch-when="pizza">
+                    <p>I love Pizza</p>
+                </div>
+                <div ng-switch-when="burger">
+                    <p>I love Burger</p>
+                </div>
+                <div ng-switch-when="biryani">
+                    <p>I love Biryani</p>
+                </div>
+            </div>
+
+            Favourite Language:
+            <select ng-model="lang">
+                <option value="">
+                <option value="cpp">CPP
+                <option value="java">JAVA
+                <option value="go">GO
+            </select>
+            <div ng-switch="lang">
+                <div ng-switch-when="cpp">
+                    <p>I love Cpp</p>
+                </div>
+                <div ng-switch-when="java">
+                    <p>I love Java</p>
+                </div>
+                <div ng-switch-when="go">
+                    <p>I love Go</p>
+                </div>
+            </div>
+
+            <button ng-click="reset()">RESET</button>
+        </form>
+        <h3>You entered: {{user.firstName}} {{user.lastName}}</h3>
+
+        <h3>Validations</h3>
+        <p>The input's valid state is:</p>
+        <h4>{{studentForm.myInput.$valid}}</h4>
+    </div>
+</body>
+
+</html>
