@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../0Scripts/angular.js"></script>
+    <script src="includes.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <h1>ng-includes</h1>
+    <div ng-controller="myCtrl">
+        <div ng-include="'employeeTable.html'"></div>
+    </div>
+</body>
+
+</html>
