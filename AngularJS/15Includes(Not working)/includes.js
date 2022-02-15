@@ -9,4 +9,5 @@ app.controller("myCtrl", function ($scope) {
     ];
 
     $scope.employees = employees;
+    $scope.employeeView = "employeeTable.html";
 });

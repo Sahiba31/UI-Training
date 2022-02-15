@@ -18,7 +18,13 @@
 <body ng-app="myApp">
     <h1>ng-includes</h1>
     <div ng-controller="myCtrl">
-        <div ng-include="'employeeTable.html'"></div>
+        Select View:
+        <select ng-model="employeeView">
+            <option value="employeeTable.html">Table</option>
+            <option value="employeeList.html">List</option>
+        </select>
+        <br><br>
+        <div ng-include="employeeView"></div>
     </div>
 </body>
 
